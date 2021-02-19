@@ -14,6 +14,9 @@ app.get("/",(req,res)=>{
 app.get("/pg",(req,res)=>{
     res.render("pg");
 })
+app.get("/apartment",(req,res)=>{
+    res.render("apartment");
+})
 app.get("/jobs",(req,res)=>{
     res.render("jobs")
 })
