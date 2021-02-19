@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header}}
+<body>
+   {{>navbar}}
+   <div class="overlay-form">
+  <div class="close-btn" onclick="toggleForm()">&times;</div>
+  <h1>Create a new account</h1>
+  <p>Join our community. Let's set up your account</p>
+  <div class="form-element">
+    <label for="fullname">Fullname</label>
+    <input type="text" id="fullname">
+  </div>
+  <div class="form-element">
+    <label for="email">Email</label>
+    <input type="email" id="email">
+  </div>
+  <div class="form-element">
+    <label for="password-1">Password</label>
+    <input type="password" id="password-1">
+  </div>
+  <div class="form-element">
+    <label for="password-2">Confirm password</label>
+    <input type="password" id="password-2">
+  </div>
+  <div class="form-element">
+    <button>Signup</button>
+  </div>
+</div>
+    <div class="searchdiv">
+      <div class="row searchdivInner">
+        <form class="form-inline">
+      <input class="form-control " id="citySearch" type="search" placeholder="Enter city/state name" aria-label="Search">
+      <ul class="navbar-nav" id="searchfields">
+      <select id="placetype" onchange="enable()" class="form-control myselect">
+  <option selected="selected" hidden>Looking for</option>
+  <option value="flat">Apartment/flat</option>
+  <option id="pg" value="pg">PG</option>
+</select>
+<select id="pgtype" class="form-control myselect" disabled>
+  <option selected="selected" hidden>PG type</option>
+  <option value="b">Boys</option>
+  <option value="g">Girls</option>
+</select>
+      </ul>
+      <button id="btn1" class="btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
+    </form>
+      </div>
+    </div>
+<div class="about">
+  <h2>About</h2>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</div>
+<div class="superexplore">
+  <div class="exploration">
+    <i class="fas fa-user-graduate"></i>
+      <h5>PGs for students</h5>
+     <a onclick="studentpg()" href="/pg">Explore &#8594</a>
+  </div>
+  <div class="exploration">
+    <i class="fas fa-user-tie"></i>
+      <h5>PGs for professionals</h5>
+     <a onclick="propg()" href="/pg">Explore &#8594</a>
+  </div>
+  <div class="exploration">
+    <i class="fas fa-utensils"></i>
+      <h5>Food/kitchen inclusive PGs</h5>
+     <a onclick="foodpg()" href="/pg">Explore &#8594</a>
+  </div>
+  <div class="exploration">
+    <i class="fas fa-rupee-sign"></i>
+      <h5>Budget Friendly PGs</h5>
+      
+     <a onclick="moneypg()" href="/pg">Explore &#8594</a>
+  </div>
+</div>
+{{>footer}}
+</body>
+
+<script src="js/index.js"></script>
+</html>

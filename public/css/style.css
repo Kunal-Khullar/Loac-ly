@@ -1,0 +1,357 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+body
+{
+    overflow-x: hidden;
+}
+li{
+    padding: 0rem 2rem;
+    font-weight: 600;
+    
+}
+ul li a{
+    color: #4F4846 !important;
+}
+
+
+/* searchbar */
+.searchdiv{
+    width: 100%;
+    margin-top: 1%;
+    height: 20rem;
+    background: url("https://cdngeneral.rentcafe.com/dmslivecafe/2/95513/470%20Manhattan%20Duplex%201600x1050.jpg?crop=(0,0,300,196.8750000000005)&cropxunits=300&cropyunits=197&quality=85&scale=both&") center center no-repeat;
+    background-size: cover;
+}
+.searchdivInner{
+    justify-content: center;
+   padding-top: 10%;
+   width: 100%;
+}
+
+#searchfields{
+    flex-direction: row;
+    background: white;
+    border: 1px solid #ced4da;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#citySearch{
+    width:22rem;
+    height: 2.6rem;
+
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+#btn1{
+    color: black;
+    border: black;
+    background: white;
+    height: 2.6rem;
+    width: 6rem;
+    outline: none !important;
+}
+
+#btn1:hover{
+    background: black;
+    color: white;
+}
+.myselect{
+    height: 2.6rem !important;
+    border-radius: 0px !important;
+}
+/* explore */
+.about{
+    padding: 1.5rem;
+    background: lightgoldenrodyellow ;
+    text-align: center;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    text-shadow: lightgray;
+}
+.superexplore{
+    
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+}
+.exploration{
+    width: 25%;
+    justify-content: center;
+    text-align: center;
+    background: #fefefe;
+    margin: 0px .5rem;
+    padding-bottom: 1rem;
+    box-shadow: 1px 1px 5px 0.1px;
+}
+.fa-user-graduate,.fa-rupee-sign,.fa-user-tie,.fa-utensils{
+    font-size: 3rem;
+    padding: .8rem 0;
+    opacity: 90%;
+}
+.exploration a{
+    color: red;
+}
+.exploration a:hover{
+    text-decoration: none;
+    color: crimson;
+}
+footer{
+    width: 100%;
+  
+    margin: auto;
+    margin-bottom: inherit;
+}
+footer p{
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    line-height: 5rem;
+    font-size: 1.4rem;
+}
+.foot{
+    height: 20rem;
+}
+
+body {
+    margin:0px;
+    font-family:"Open Sans",sans-serif;
+    background:#ddd;
+  }
+  .overlay-form {
+    position:absolute;
+    top:50vh;
+    left:0px;
+    width:100vw;
+    height:0vh;
+    background:rgba(0,0,0,0.8);
+    z-index:-1;
+    opacity:0;
+    padding:80px 100px;
+    overflow:hidden;
+    box-sizing:border-box;
+    transition: top 500ms ease-in-out,
+                opacity 500ms ease-in-out,
+                height 0ms ease-in-out 500ms;  
+  }
+  .overlay-form .close-btn {
+    position:absolute;
+    top:20px;
+    right:40px;
+    color:#fff;
+    font-size:40px;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .overlay-form h1 {
+    font-size:32px;
+    color:#fff;
+  }
+  .overlay-form p {
+    font-size:16px;
+    color:#eee;
+    margin:-15px 0px 30px;
+  }
+  .overlay-form .form-element {
+    margin:20px 0px;
+  }
+  .overlay-form label {
+    display:block;
+    font-size:17px;
+    color:#eee;
+    margin-bottom:5px;
+  }
+  .overlay-form input {
+    width:100%;
+    padding:6px;
+    font-size:17px;
+    border:2px solid #eee;
+    background:transparent;
+    outline:none;
+    border-radius:10px;
+  }
+  .overlay-form button,
+  .center button {
+    margin-top:10px;
+    width:100px;
+    height:35px;
+    font-size:15px;
+    text-transform:uppercase;
+    background:#fff;
+    color:#222;
+    border:none;
+    outline:none;
+    border-radius:10px;
+  }
+  .center {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+  }
+  .center button {
+    width:150px;
+    height:40px;
+    font-weight:600;
+    box-shadow:3px 3px 2px 1px rgba(0,0,0,0.1);
+    cursor:pointer;
+  }
+  
+  body.activeForm .overlay-form {
+    z-index:2;
+    opacity:1;
+    top:0px;
+    height:100vh;
+    transition: top 500ms ease-in-out,
+                opacity 500ms ease-in-out,
+                height 0ms ease-in-out 0ms;
+  }
+  /* JOBS */
+  .jobs{
+      padding-left: 3%;
+      padding-right: 3%;
+      padding-top: 2%;
+      border: 1px solid #ced4da;
+      margin-top: 2%;
+      margin-bottom: 1%;
+      box-shadow: 0.5px 0.5px 5px 0.1px;
+  }
+  .filters
+  {
+      padding: 1rem 2rem 1rem 4rem;
+  }
+  
+  .salary,.loc{
+      position: absolute;
+      right: 1.5rem;
+      font-weight: 400;
+  }
+  .salary{
+      font-weight: 600;
+  }
+  .fa-user{
+      font-size: 2rem;
+      padding: 1%;
+      padding-right: 1rem;
+  }
+  .pname{
+      font-size: 0.9rem;
+      opacity: 90%;
+  }
+  .pname,.salary{
+      margin-top: 10px;
+      font-size: 1.1rem;
+  }
+  .jobrow{
+      margin-top: -12px;
+  }
+  .desc{
+      text-align: justify;
+      padding-left: 30px;
+  }
+  .jobtitle{
+      padding-left: 50px;
+      font-size: 1.2rem;
+      font-weight: bolder;
+  }
+  .btnrow{
+      justify-content: center;
+  }
+  .btn2{
+      width: 8rem;
+      margin-bottom: 0.5rem;
+      float: right;
+  }
+  .extrafilter{
+     height: fit-content;
+      background: #fefefe;
+      margin-top: 1rem;
+      width: 95%;
+  }
+  .sort{
+      padding: 1.5rem 0.5rem;
+  }
+  .skillrow{
+      align-items: baseline;
+  }
+  .btn3{
+    background: #eee !important;
+    color: black !important;
+    opacity: 90%;
+    width: 5rem !important;
+    border-radius: 1.1rem !important;
+    padding: 0.5rem !important;
+    margin: 0.5rem 1.5rem;
+}
+#btn4{
+    margin-left: 20rem !important;
+}
+/* apartments/filters */
+#listapart{
+    padding-left: 5rem !important;
+}
+.flat .row{
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    align-items: center;
+}
+.flat
+{
+    background: #fefefe;
+    box-shadow: 0.2px 0.2px 8px 0.1px;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.myrowbtn{
+    justify-content: center;
+}
+
+.hide{
+    display: none;
+}
+.superdetails{
+    padding: 1rem;
+}
+.mydivs{
+    
+    width: 100%;
+    height: 25rem;
+}
+#div1{
+    background: url("https://www.w3schools.com/css/img_5terre.jpg") center center no-repeat;
+    background-size: cover;
+}
+#div2{
+    background: url("https://www.w3schools.com/howto/img_snow.jpg") center center no-repeat;
+    background-size: cover;
+}
+#div3{
+    background: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_177b9322ad8%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_177b9322ad8%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22247.3046875%22%20y%3D%22217.9484375%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E") center center no-repeat;
+    background-size: cover;
+}
+.slideup, .slidedown {
+    max-height: 0;            
+    overflow-y: hidden;
+    -webkit-transition: max-height 0.8s ease-in-out;
+    -moz-transition: max-height 0.8s ease-in-out;
+    -o-transition: max-height 0.8s ease-in-out;
+    transition: max-height 0.8s ease-in-out;
+}
+.slidedown {            
+    max-height:60rem                    
+} 
+.nearby{
+    overflow-x: hidden;
+}
+.restime{
+   
+    margin-left: 15rem;
+}
+.distance{
+    margin-left: 20rem;
+}
