@@ -118,30 +118,53 @@
             <input class="form-control " id="citySearch" type="search" placeholder="Enter city/state name"
                 aria-label="Search">
             <div class="salrayfilter sort">
-                <h6>Select monthly price range</h6>
-                <select id="rentrange" class="form-control">
-                    <option selected="selected" value="1">10k-20k</option>
-                    <option value="2">20k-30k</option>
-                    <option value="3">30k-40k</option>
-                    <option value="4">40k-50k</option>
-                    <option value="5">>50k</option>
+                <h6>Select monthly rent range</h6>
+                <select id="pgrentrange" class="form-control">
+                    <option selected="selected" value="1">5k
+                    </option>
+                    <option value="2">5k-7k</option>
+                    <option value="3">7k-9k</option>
+                    <option value="4">9k-10k</option>
+                    <option value="5">>10k</option>
                 </select>
             </div>
             <div class="work_time sort">
-                <h6>Apartment Type:</h6>
+                <h6>PG Type:</h6>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="hometype" id="1bhk" value="workyes">
-                    <label class="form-check-label" for="workyes">1 BHK</label>
+                    <input class="form-check-input" type="radio" name="pgtype" id="bo" value="workyes">
+                    <label class="form-check-label" for="workyes">Boys</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="hometype" id="2bhk" value="workno">
-                    <label class="form-check-label" for="workno">2 BHK</label>
+                    <input class="form-check-input" type="radio" name="pgtype" id="gi" value="workno">
+                    <label class="form-check-label" for="workno">Girls</label>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="hometype" id="" value="workno">
-                    <label class="form-check-label" for="workno">3 BHK</label>
-                </div>
+               
             </div>
+            <div class="work_time sort">
+                <h6>Meals Included</h6>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="foodava" id="fyes" value="workyes">
+                    <label class="form-check-label" for="workyes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="foodava" id="fno" value="workno">
+                    <label class="form-check-label" for="workno">No</label>
+                </div>
+               
+            </div>
+            <div class="work_time sort">
+                <h6>Laundary Available:</h6>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="laundava" id="lyes" value="workyes">
+                    <label class="form-check-label" for="workyes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="laundava" id="lno" value="workno">
+                    <label class="form-check-label" for="workno">No</label>
+                </div>
+               
+            </div>
+            
             <button type="button" class="btn btn-danger" id="btn4">Apply</button>
         </div>
 </div>

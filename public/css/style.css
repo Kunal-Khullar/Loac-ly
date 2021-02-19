@@ -378,3 +378,41 @@ body {
 .apartments{
     margin-top: 1rem;
 }
+.facility{
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+}
+.fc{
+    width: 28%;
+    padding: 2% 1.5%;
+    margin-top: 5%;
+}
+.img6{
+  height: 15rem;
+  width: 100%;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+#i1{
+    background: url("https://image.freepik.com/free-vector/house-searching-concept-illustration_114360-385.jpg") center center no-repeat;
+    background-size: cover;
+}
+#i2{
+    background: url("https://image.freepik.com/free-vector/web-search-concept-illustration_114360-4767.jpg") center center no-repeat;
+    background-size: cover;
+}
+#i3{
+    background: url("https://image.freepik.com/free-vector/illustration-gps-telling-route_53876-37296.jpg") center center no-repeat;
+    background-size: cover;
+}
+.foot{
+    width: 100%;
+    margin: auto;
+    margin-bottom: inherit;
+    background: #212112;
+    color: ivory;
+    height: 3rem;
+    text-align: center;
+}
