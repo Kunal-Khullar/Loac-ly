@@ -20,6 +20,11 @@ app.get("/apartment",(req,res)=>{
 app.get("/jobs",(req,res)=>{
     res.render("jobs")
 })
+app.get("*", (req,res)=>{
+    res.render("error",{
+        errorMsg: "Page Not Found"
+    });
+})
 app.listen(port,()=>{
     console.log("Running")
 })
