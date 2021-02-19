@@ -115,7 +115,9 @@ footer p{
 .foot{
     height: 20rem;
 }
-
+input[type="radio"]{
+    -webkit-appearance: radio;
+}
 body {
     margin:0px;
     font-family:"Open Sans",sans-serif;
@@ -123,15 +125,17 @@ body {
   }
   .overlay-form,.overlay-form2 {
     position:absolute;
+    color: #111 !important;
     top:50vh;
     left:0px;
     width:100vw;
     height:0vh;
-    background:rgba(0,0,0,0.8);
+    background:#fef;
+    opacity: 80%;
     z-index:-1;
     opacity:0;
     padding:80px 100px;
-    overflow:hidden;
+    overflow-x: hidden;
     box-sizing:border-box;
     transition: top 500ms ease-in-out,
                 opacity 500ms ease-in-out,
@@ -141,14 +145,14 @@ body {
     position:absolute;
     top:20px;
     right:40px;
-    color:#fff;
+    color:#111;
     font-size:40px;
     font-weight:600;
     cursor:pointer;
   }
   .overlay-form h1 ,.overlay-form2 h1{
     font-size:32px;
-    color:#fff;
+    color:#111;
   }
   .overlay-form p ,.overlay-form2 p{
     font-size:16px;
@@ -157,21 +161,28 @@ body {
   }
   .overlay-form .form-element ,.overlay-form2 .form-element{
     margin:20px 0px;
+    color: #111
   }
   .overlay-form label ,.overlay-form2 label{
     display:block;
     font-size:17px;
-    color:#eee;
+    color:#111;
     margin-bottom:5px;
+  }
+  .form-check-inline{
+      display: inline-block !important;
   }
   .overlay-form input ,.overlay-form2 input{
     width:100%;
     padding:6px;
     font-size:17px;
-    border:2px solid #eee;
+    border:2px solid #111;
     background:transparent;
     outline:none;
     border-radius:10px;
+  }
+  input[type="file"]{
+      border: 0px;
   }
   .overlay-form button,
   .center button ,.overlay-form2 button{
@@ -181,7 +192,7 @@ body {
     font-size:15px;
     text-transform:uppercase;
     background:#fff;
-    color:#222;
+    color:#111;
     border:none;
     outline:none;
     border-radius:10px;
