@@ -8,8 +8,8 @@
     <div class="filters">
         <h1>Active Job Listings</h1>
         <div class="superfilters row">
-            <div class="col-md-8 jobcol animate__animated animate__slideInLeft ">
-                <div class="jobs">
+            <div id='alljobs' class="col-md-8 jobcol animate__animated animate__slideInLeft ">
+                {{!-- <div class="jobs">
                     <div class="row">
                         <i class="fas fa-user"></i>
                         <h6 class="pname">Person Name</h6>
@@ -34,9 +34,9 @@
                         <button disabled class="btn btn-light btn3">Skill</button>
                         <button class="btn btn-danger btn2" type="button">Contact</button>
                     </div>
-                </div>
+                </div> --}}
 
-                <div class="jobs">
+                {{!-- <div class="jobs">
                     <div class="row">
                         <i class="fas fa-user"></i>
                         <h6 class="pname">Person Name</h6>
@@ -62,8 +62,8 @@
                         <button class="btn btn-danger btn2" type="button">Contact</button>
                     </div>
                      
-                </div>
-                <div class="jobs">
+                </div> --}}
+                {{!-- <div class="jobs">
                     <div class="row">
                         <i class="fas fa-user"></i>
                         <h6 class="pname">Person Name</h6>
@@ -88,8 +88,8 @@
                         <button disabled class="btn btn-light btn3">Skill</button>
                         <button class="btn btn-danger btn2" type="button">Contact</button>
                     </div>
-                </div>
-                <div class="jobs">
+                </div> --}}
+                {{!-- <div class="jobs">
                     <div class="row">
                         <i class="fas fa-user"></i>
                         <h6 class="pname">Person Name</h6>
@@ -114,7 +114,7 @@
                         <button disabled class="btn btn-light btn3">Skill</button>
                         <button class="btn btn-danger btn2" type="button">Contact</button>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="col-md-4 extrafilter animate__animated animate__slideInRight ">
                 <h3>Filters</h3>
@@ -182,4 +182,69 @@
    {{>footer}}
 </body>
 <script src="js/index.js"></script>
+<script defer async>
+    
+
+    
+     fetch(proxyurl + 'https://loca-ly.herokuapp.com/api/', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `JWT ${localStorage.getItem("authtoken")}`
+            },
+            body: JSON.stringify({
+                query: `
+        
+        query{
+            alljobs{
+              title
+              jobtype
+              description
+              workfromhome
+              pay
+              skillsrequired
+              mobile
+              minimumdesignation
+              location
+              
+              }
+            }
+        `
+            })
+        }).then(res => res.json())
+            .then(data => {
+                console.log(data)
+                
+                data.data.alljobs.forEach(alljobs => {
+
+                    console.log(alljobs.title)
+                    document.getElementById("alljobs").innerHTML+=
+                        `<div class='jobs'>
+      <div class='row'>
+          <i class='fas fa-user'></i>
+          <h6 class='pname'>Person Name</h6>
+          <h5 class='salary'>${alljobs.pay}</h5>
+      </div>
+      <div class='row jobrow'>
+          <h4 class='jobtitle'>${alljobs.title}</h4>
+          <h6 class='loc'>${alljobs.location}</h6>
+      </div>
+      <div class='row btnrow'>
+
+
+          <p class='desc'>${alljobs.description}</p>
+         
+      </div>
+       <div class='skillrow'>
+          <button disabled class='btn btn-light btn3'>${alljobs.skillsrequired}</button>
+          <button disabled class='btn btn-light btn3'>Work from home: ${alljobs.workfromhome}</button>
+          <button disabled class='btn btn-light btn3'>Job type: ${alljobs.jobtype}</button>
+          <button class='btn btn-danger btn2' type='button'>Contact</button>
+      </div>
+  </div>`
+                })
+                 
+            })
+    
+</script>
 </html>

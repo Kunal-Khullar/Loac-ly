@@ -1,4 +1,4 @@
-
+const proxyurl = "https://cors-anywhere.herokuapp.com/";
 var s = 1, t = 1, u = 1;
 function enable() {
     var v1 = document.getElementById("placetype");
@@ -15,6 +15,7 @@ function toggleForm() {
         document.body.classList.remove('activeForm2')
     }
 }
+var htmldata = "";
 function toggleForm2() {
     document.body.classList.toggle('activeForm2');
 }
@@ -67,8 +68,19 @@ function slide3() {
 
     console.log(document.getElementById("state"))
 }
+
+   
+    
+        // if (window.location.href = 'http://localhost:3000/jobs') {
+       
+        
+ 
+            
+    
+
+
 var jtype = "", loc2 = "", title = "", fname = "", mail = "", des = "", skill = "", padhai = "", mob = "", pay = "", loc1 = "", whome = "";
-const proxyurl = "https://cors-anywhere.herokuapp.com/";
+
 
 function addjob() {
     console.log("ez")
@@ -85,26 +97,26 @@ function addjob() {
     jtype = document.querySelector("input[name=inlineRadioOptions6]:checked").value;
     whome = document.querySelector("input[name=inlineRadioOptions5]:checked").value;
     console.log(jtype, whome)
-    
-    var query = 
-  
-`mutation add($des: String!, $loc: String!, $mob: String!, $pay: Int!, $title: String!, $skill: String!,$whome: String!,$jtype: String!,$padhai: String!){
+
+    var query =
+
+        `mutation add($des: String!, $loc: String!, $mob: String!, $pay: Int!, $title: String!, $skill: String!,$whome: String!,$jtype: String!,$padhai: String!){
     addJob(description: $des, location: $loc, mobile: $mob, pay: $pay, title: $title, skillsrequired: $skill,minimumdesignation: $padhai,jobtype: $jtype, workfromhome: $whome){
       __typename
     }
   }`;
     console.log("Harman noob");
-    fetch(proxyurl+'https://loca-ly.herokuapp.com/api/', {
-      
+    fetch(proxyurl + 'https://loca-ly.herokuapp.com/api/', {
+
         method: 'POST',
         headers: {
             "X-Requested-With": "XMLHttpRequest",
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'Authorization':`JWT ${localStorage.getItem("authtoken")}`
+            'Authorization': `JWT ${localStorage.getItem("authtoken")}`
         },
         body: JSON.stringify({
-          query,
+            query,
             variables: { des, loc, mob, pay, title, skill, padhai, jtype, whome }
         })
     })
