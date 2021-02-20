@@ -57,6 +57,9 @@ var htmldata = "";
 function toggleForm2() {
     document.body.classList.toggle('activeForm2');
 }
+function toggleForm3() {
+    document.body.classList.toggle('activeForm3');
+}
 function slide() {
     console.log("harman noob")
     if (s == 1) {

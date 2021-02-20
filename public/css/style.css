@@ -148,7 +148,7 @@ body {
     font-family:"Open Sans",sans-serif;
     background:#ddd;
   }
-  .overlay-form,.overlay-form2 {
+  .overlay-form,.overlay-form2,.overlay-form3 {
     position:absolute;
     color: #111 !important;
     top:50vh;
@@ -166,7 +166,7 @@ body {
                 opacity 500ms ease-in-out,
                 height 0ms ease-in-out 500ms;  
   }
-  .overlay-form .close-btn,.overlay-form2 .close-btn{
+  .overlay-form .close-btn,.overlay-form2 .close-btn,.overlay-form3 .close-btn{
     position:absolute;
     top:20px;
     right:40px;
@@ -175,20 +175,20 @@ body {
     font-weight:600;
     cursor:pointer;
   }
-  .overlay-form h1 ,.overlay-form2 h1{
+  .overlay-form h1 ,.overlay-form2 h1,.overlay-form3 h1{
     font-size:32px;
     color:#111;
   }
-  .overlay-form p ,.overlay-form2 p{
+  .overlay-form p ,.overlay-form2 p,.overlay-form3 p{
     font-size:16px;
     color:#eee;
     margin:-15px 0px 30px;
   }
-  .overlay-form .form-element ,.overlay-form2 .form-element{
+  .overlay-form .form-element ,.overlay-form2 .form-element,.overlay-form3 .form-element{
     margin:20px 0px;
     color: #111
   }
-  .overlay-form label ,.overlay-form2 label{
+  .overlay-form label ,.overlay-form2 label,.overlay-form3 label{
     display:block;
     font-size:17px;
     color:#111;
@@ -197,7 +197,7 @@ body {
   .form-check-inline{
       display: inline-block !important;
   }
-  .overlay-form input ,.overlay-form2 input{
+  .overlay-form input ,.overlay-form2 input,.overlay-form3 input{
     width:100%;
     padding:6px;
     font-size:17px;
@@ -210,7 +210,7 @@ body {
       border: 0px;
   }
   .overlay-form button,
-  .center button ,.overlay-form2 button{
+  .center button ,.overlay-form2 button,.overlay-form3 button{
     margin-top:10px;
     width:100px;
     height:35px;

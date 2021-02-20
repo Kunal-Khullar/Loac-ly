@@ -133,23 +133,23 @@
   
   <div class="form-element">
     <label for="fullname">Name</label>
-    <input id="afname" type="text" id="fullname3">
+    <input id="afname" type="text" >
   </div>
   <div class="form-element">
     <label for="email">Email</label>
-    <input id="aemail" type="email" id="email3">
+    <input id="aemail" type="email">
   </div>
   <div class="form-element">
     <label for="email">Contact</label>
-    <input id="acontact" type="text" id="contact1">
+    <input id="acontact" type="text">
   </div>
   <div class="form-element">
     <label for="email">Monthly rent</label>
-    <input id="arent" type="text" id="rent1">
+    <input id="arent" type="text" >
   </div>
   <div class="form-element">
     <label for="email">City</label>
-    <input id="acity" type="text" id="city2">
+    <input id="acity" type="text" >
   </div>
   
  <div class="skillsearch sort form-element">
@@ -165,5 +165,74 @@
   </div>
   <div class="form-element">
     <button onclick="addhome()" type="button">Submit</button>
+  </div>
+</div>
+ <div class="overlay-form3 overlay3" id="form3">
+  <div class="close-btn" onclick="toggleForm3()">&times;</div>
+  <h1>Enter all the details</h1>
+  
+  <div class="form-element">
+    <label for="fullname">Name</label>
+    <input id="pfname" type="text" id="fullname3">
+  </div>
+  <div class="form-element">
+    <label for="email">Email</label>
+    <input id="pemail" type="email" id="email3">
+  </div>
+  <div class="form-element">
+    <label for="email">Contact</label>
+    <input id="pcontact" type="text" id="contact1">
+  </div>
+  <div class="form-element">
+    <label for="email">Monthly rent</label>
+    <input id="prent" type="text" id="rent1">
+  </div>
+  <div class="form-element">
+    <label for="email">City</label>
+    <input id="pcity" type="text" id="city2">
+  </div>
+  
+ <div class="skillsearch sort form-element">
+                        <h6>PG type:</h6>
+                        <select id="ptype" class="form-control">
+                       <option value="Boys" selected>Boys</option>
+                       <option value="Girls" >Girls</option>
+                                           </select>
+                    </div>
+  <div>
+ <div class="skillsearch sort form-element">
+                        <h6>Meals/Kitchen included:</h6>
+                        <select id="pfood" class="form-control">
+                       <option value="Y" selected>Yes</option>
+                       <option value="N" >No</option>
+                                           </select>
+                    </div>
+ <div class="skillsearch sort form-element">
+                        <h6>Laundary included:</h6>
+                        <select id="plaund" class="form-control">
+                       <option value="Y" selected>Yes</option>
+                       <option value="N" >No</option>
+                                           </select>
+                    </div>
+ <div class="skillsearch sort form-element">
+                        <h6>Attached Washroom:</h6>
+                        <select id="pwash" class="form-control">
+                       <option value="Y" selected>Yes</option>
+                       <option value="N" >No</option>
+                                           </select>
+                    </div>
+ <div class="skillsearch sort form-element">
+                        <h6>Room Types:</h6>
+                        <select id="prtype" class="form-control">
+                       <option value="1" selected>Single-seater</option>
+                       <option value="2" >Two-seater</option>
+                       <option value="3" >Three-seater</option>
+                                           </select>
+                    </div>
+  <div>
+    <input id="pupimages" type="file" name="photos" multiple>
+  </div>
+  <div class="form-element">
+    <button onclick="addpg()" type="button">Submit</button>
   </div>
 </div>
