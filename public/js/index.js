@@ -64,5 +64,46 @@ function slide3() {
         document.getElementById("vd3").innerHTML = "View details"
     }
 
+    console.log(document.getElementById("state"))
 }
+var jtype="",loc2="",title="",fname="",mail="",des="",skill="",padhai="",mob="",pay="",loc1="",whome="";
+const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
+function addjob(){
+    console.log("ez")
+   title = document.getElementById("jtitle").value;
+   fname = document.getElementById("fullname").value;
+//    mail = document.getElementById("email").value;
+   des = document.getElementById("des").value;
+   skill = document.getElementById("skillset").value;
+   padhai = document.getElementById("designation").value;
+   mob = document.getElementById("phone").value;
+   pay = document.getElementById("salary").value;
+   loc = document.getElementById("city").value;
+//   loc2 = document.getElementById("state").value;
+  jtype = document.querySelector("input[name=inlineRadioOptions6]:checked").value;
+  whome = document.querySelector("input[name=inlineRadioOptions5]:checked").value;
+  console.log(jtype,whome)
+  var query = `mutation alljobs($des: String!, $loc: String!, $mob: String!, $pay: Int!, $title: String!, $skill: String!,$fname: String!,$whome: String!,$jtype: String!,$padhai: String!){
+    addJob(description: $des, location: $loc, mobile: $mob, pay: $pay, title: $title, skillsrequired: $skill,user: $fname,minimumdesignation: $padhai,jobtype: $jtype, workfromhome: $whome){
+      __typename
+    }
+  }`;
+    console.log("Harman noob");
+    fetch(  'https://loca-ly.herokuapp.com/api', {
+        mode:"no-cors",
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        query,
+        variables: { des, loc, mob, pay, title, skill ,fname,padhai,jtype,whome}
+      })
+    })
+      .then(r => r.json())
+      .then(data => console.log('data returned:', data));
+  }
+        
+   
