@@ -17,27 +17,44 @@ ul li a{
     color: #4F4846 !important;
 }
 
-
+.navbar{
+    background: lightcoral !important;
+}
 /* searchbar */
 .searchdiv{
     width: 100%;
-    margin-top: 1%;
-    height: 20rem;
-    background: url("https://cdngeneral.rentcafe.com/dmslivecafe/2/95513/470%20Manhattan%20Duplex%201600x1050.jpg?crop=(0,0,300,196.8750000000005)&cropxunits=300&cropyunits=197&quality=85&scale=both&") center center no-repeat;
+    text-align: center;
+    height: 30rem;
+    background: url("https://cdn.staticmb.com/images/pg/pg-home-banner_0.png") center center no-repeat;
     background-size: cover;
+    color: lightcyan;
 }
-.searchdivInner{
+.searchdiv:hover{
+    filter: opacity(90%);
+}
+.searchdiv h4{
+    font-size: 2.5rem;
+    font-family: 'Roboto-condensed';
+    font-weight: 500;
+    padding-top: 10%;
+}
+.searchdivInner{    
+    
     justify-content: center;
-   padding-top: 10%;
+   padding-top: 2%;
    width: 100%;
 }
 
 #searchfields{
+    cursor: pointer;
     flex-direction: row;
     background: white;
-    border: 1px solid #ced4da;
+   
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+#searchfields select{
+    cursor: pointer;
 }
 #citySearch{
     width:22rem;
@@ -53,10 +70,13 @@ ul li a{
     height: 2.6rem;
     width: 6rem;
     outline: none !important;
+    border-bottom-left-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+
 }
 
 #btn1:hover{
-    background: black;
+    background:crimson;
     color: white;
 }
 .myselect{
@@ -66,7 +86,7 @@ ul li a{
 /* explore */
 .about{
     padding: 1.5rem;
-    background: lightgoldenrodyellow ;
+    background: lightcoral ;
     text-align: center;
     font-size: 1.1rem;
     text-transform: capitalize;
@@ -86,6 +106,10 @@ ul li a{
     margin: 0px .5rem;
     padding-bottom: 1rem;
     box-shadow: 1px 1px 5px 0.1px;
+
+}
+.exploration:hover{
+    filter: opacity(0.9);
 }
 .fa-user-graduate,.fa-rupee-sign,.fa-user-tie,.fa-utensils{
     font-size: 3rem;
@@ -97,6 +121,7 @@ ul li a{
 }
 .exploration a:hover{
     text-decoration: none;
+    font-weight: bold;
     color: crimson;
 }
 footer{
