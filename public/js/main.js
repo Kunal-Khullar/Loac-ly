@@ -33,38 +33,12 @@ $('.message a').click(function(){
     })
         .then(r => r.json())
         .then(data => console.log('data returned:', data));
-    //     var query = `mutation create($cname: String!,$cnum: String!){
-    //         createProfile(mobile: $cnum, name: $cname){
-    //             __typename
-    //         }
-    //     }`
-    // await    fetch(proxyurl+'https://loca-ly.herokuapp.com/api/', {
-      
-    //     method: 'POST',
-    //     headers: {
-    //         "X-Requested-With": "XMLHttpRequest",
-    //         'Content-Type': 'application/json',
-    //         'Accept': 'application/json',
-    //         // 'Authorization':"JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Imd1cmxlZW5Abm90Tm9vYi5jb20iLCJleHAiOjE2MTM3OTc4NTUsIm9yaWdJYXQiOjE2MTM3OTc1NTV9.wnHIalgMxH9xda2Sl4eAcBDN8GCHBWMvd0nGdG-Zb24"
-    //     },
-    //     body: JSON.stringify({
-    //       query,
-    //         variables: { cnum,cname }
-    //     })
-    // })
-    //     .then(r => r.json())
-    //     .then(data => console.log('data returned:', data));
-     
- }
- function login(){
-    lemail=document.getElementById("lemail").value;
-    lpass=document.getElementById("lpass").value;
-    var query = `mutation create($lemail: String!,$lpass: String!){
-        tokenAuth(email $lemail, password: $lpass){
-            token
-        }
-    }`
-    fetch(proxyurl+'https://loca-ly.herokuapp.com/api/', {
+         query = `mutation createp($cname: String!,$cnum: String!){
+            createProfile( name: $cname,mobile: $cnum){
+                __typename
+            }
+        }`
+    await    fetch(proxyurl+'https://loca-ly.herokuapp.com/api/', {
       
         method: 'POST',
         headers: {
@@ -75,11 +49,49 @@ $('.message a').click(function(){
         },
         body: JSON.stringify({
           query,
-            variables: { lemail,lpass }
+            variables: { cname,cnum }
         })
     })
         .then(r => r.json())
-        .then(data => {
-            console.log(data)
-        });
+        .then(data => console.log('data returned:', data));
+     
+ }
+
+ async function login(){
+    lemail=document.getElementById("lemail").value;
+    lpass=document.getElementById("lpass").value;
+    var query = `mutation token($lemail: String!,$lpass: String!){
+        tokenAuth(email: $lemail, password: $lpass){
+            token
+        }
+    }`
+    
+        try{
+            fetch(proxyurl+'https://loca-ly.herokuapp.com/api/', {
+          
+                method: 'POST',
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest",
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    // 'Authorization':"JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Imd1cmxlZW5Abm90Tm9vYi5jb20iLCJleHAiOjE2MTM3OTc4NTUsIm9yaWdJYXQiOjE2MTM3OTc1NTV9.wnHIalgMxH9xda2Sl4eAcBDN8GCHBWMvd0nGdG-Zb24"
+                },
+                body: JSON.stringify({
+                  query,
+                    variables: { lemail,lpass }
+                })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    console.log(data.data.tokenAuth.token)
+                    localStorage.setItem("authtoken",data.data.tokenAuth.token)
+                });
+                document.getElementById("myref").href='home'
+        }
+        catch(error){
+            console.log(error)
+        }
+    
+   
+   
  }

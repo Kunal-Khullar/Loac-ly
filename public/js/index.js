@@ -101,7 +101,7 @@ function addjob() {
             "X-Requested-With": "XMLHttpRequest",
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'Authorization':"JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Imd1cmxlZW5Abm90Tm9vYi5jb20iLCJleHAiOjE2MTM3OTc4NTUsIm9yaWdJYXQiOjE2MTM3OTc1NTV9.wnHIalgMxH9xda2Sl4eAcBDN8GCHBWMvd0nGdG-Zb24"
+            'Authorization':`JWT ${localStorage.getItem("authtoken")}`
         },
         body: JSON.stringify({
           query,
