@@ -256,6 +256,7 @@ body {
   }
   /* JOBS */
   .jobs{
+    filter: blur(2px);
       padding-left: 3%;
       padding-right: 3%;
       padding-top: 2%;
@@ -263,6 +264,12 @@ body {
       margin-top: 2%;
       margin-bottom: 1%;
       box-shadow: 0.5px 0.5px 5px 0.1px;
+  }
+  .jobs:hover{
+     filter: blur(0) ;
+  }
+  .jobs:focus{
+      filter: blur(0);
   }
   .filters
   {
