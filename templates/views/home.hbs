@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header}}
+<body>
+   {{>navbar}}
+
+    <div class="searchdiv">
+      <h4>Find a home away from home</h4>
+      <div class="row searchdivInner">
+        <form class="form-inline">
+      <input class="form-control " id="citySearch" type="search" placeholder="Enter city/state name" aria-label="Search">
+      <ul class="navbar-nav" id="searchfields">
+      <select id="placetype" onchange="enable()" class="form-control myselect">
+  <option selected="selected" hidden>Looking for</option>
+  <option value="flat">Apartment/flat</option>
+  <option id="pg" value="pg">PG</option>
+</select>
+<select id="pgtype" class="form-control myselect" disabled>
+  <option selected="selected" hidden>PG type</option>
+  <option value="b">Boys</option>
+  <option value="g">Girls</option>
+</select>
+      </ul>
+      <button id="btn1" class="btn btn-danger my-2 my-sm-0" type="button">Search</button>
+    </form>
+      </div>
+    </div>
+    
+    <div class="facility animate__animated animate__fadeIn animate__delay-1s">
+      <div class="fc">
+        <div class="img6" id="i1"></div>
+        <p>Choose your ideal place from a long list of PGs/apartments with all necessary details.</p>
+      </div>
+      <div class="fc">
+        <div class="img6" id="i2"></div>
+        <p>Modify your search however you want. We have some cool filters to help you with it.</p>
+      </div>
+      <div class="fc">
+        <div class="img6" id="i3"></div>
+        <p>Have a look at the vicinity of all the listed PGs/apartments. Choose your ideal locality.</p>
+      </div>
+    </div>
+
+<div class="superexplore animate__animated animate__fadeIn animate__delay-3s">
+  <div class="exploration">
+    <i class="fas fa-user-graduate"></i>
+      <h5>PGs for students</h5>
+     <a onclick="studentpg()" href="/pg">Explore &#8594</a>
+  </div>
+  <div class="exploration">
+    <i class="fas fa-user-tie"></i>
+      <h5>PGs for professionals</h5>
+     <a onclick="propg()" href="/pg">Explore &#8594</a>
+  </div>
+  <div class="exploration">
+    <i class="fas fa-utensils"></i>
+      <h5>Food/kitchen inclusive PGs</h5>
+     <a onclick="foodpg()" href="/pg">Explore &#8594</a>
+  </div>
+  <div class="exploration">
+    <i class="fas fa-rupee-sign"></i>
+      <h5>Budget Friendly PGs</h5>
+      
+     <a onclick="moneypg()" href="/pg">Explore &#8594</a>
+  </div>
+</div>
+<div class="about">
+  <h2>About</h2>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</div>
+{{>footer}}
+</body>
+
+<script src="js/index.js"></script>
+</html>
