@@ -186,8 +186,8 @@
     
 
     
-     fetch('https://loca-ly.herokuapp.com/api/', {
-           mode:'no-cors',
+     fetch(proxyurl+ 'https://loca-ly.herokuapp.com/api/', {
+           
             method: 'POST',
             headers: {
                 "X-Requested-With": "XMLHttpRequest",

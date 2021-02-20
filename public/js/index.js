@@ -8,34 +8,61 @@ var firebaseConfig = {
     appId: "1:351886880110:web:96601d6ce762c091cd657f",
     measurementId: "G-MS8R31CR1Q"
   };
+  var a8="",a1 = "",a2="",a3="",a4="",a5="",a6="",myvar1="";
+  var a7 = document.getElementById("pupimages");
   var metadata = {
     contentType: 'image/jpeg',
   };
   var i=0;
-  const fileList = [];
+
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
   var storage = firebase.storage();
   var storageRef = storage.ref();
   var imagesRef = storageRef.child('images');
-  var a1 = "",a2="",a3="",a4="",a5="",a6="",a7=[];
-  async function addhome(){
-        a1=document.getElementById("afname").value;
-        a2=document.getElementById("aemail").value;
-        a3=document.getElementById("acontact").value;
-        a4=document.getElementById("arent").value;
-        a5=document.getElementById("acity").value;
-        a6=document.getElementById("atype").value;
-        a7 = document.getElementById("upimages");
-        for(i=0;i<a7.files.length;i++){
-            await storageRef.child(`images/${a7.files[i].name}`).put(a7.files[i], metadata);
-            storageRef.child(`images/${a7.files[i].name}`).getDownloadURL()
+a7.addEventListener('change',async (event)=>{
+    const fileList = event.target.files;
+    await storageRef.child(`images/${fileList[0].name}`).put(fileList[0], metadata);
+            storageRef.child(`images/${fileList[0].name}`).getDownloadURL()
             .then(url=>{
-                console.log(url)
+                myvar1=url;
+                
             })
-        }
+})
+  async function addpg(){
+        a1=document.getElementById("pfood").value
+        a2=document.getElementById("plaund").value
+        a3=document.getElementById("pwash").value
+        a8=document.getElementById("prtype").value
+       
+        a4=document.getElementById("prent").value;
+        a5=document.getElementById("pcity").value;
+        a6=document.getElementById("ptype").value;
+       
         
+        
+        var query = `mutation addpg($a1: String!,$a2: String!,$a3: String!,$a4: Int!,$a5: String!,$a6: String!,$myvar1: String!,$a8: String!){
+            addPg(kitchenAvailable: $a1,laundryIncluded: $a2,location: $a5,rent: $a4,roomtype: $a8,url: $myvar1,usertype: $a6, washroomAttached: $a3){
+                __typename
+            }
+        }`;
+        fetch(proxyurl + 'https://loca-ly.herokuapp.com/api/', {
+
+        method: 'POST',
+        headers: {
+            "X-Requested-With": "XMLHttpRequest",
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': `JWT ${localStorage.getItem("authtoken")}`
+        },
+        body: JSON.stringify({
+            query,
+            variables: { a1,a2,a5,a4,a8,myvar1,a6,a3 }
+        })
+    })
+        .then(r => r.json())
+        .then(data => console.log('data returned:', data.data));
     }
 var s = 1, t = 1, u = 1;
 function enable() {
@@ -166,65 +193,4 @@ function addjob() {
 }
 
 
- fetch('https://loca-ly.herokuapp.com/api/', {
-           mode:'no-cors',
-            method: 'POST',
-            headers: {
-                "X-Requested-With": "XMLHttpRequest",
-                "Content-Type": "application/json",
-                "Accept": "*/*",
-                "Authorization": `JWT ${localStorage.getItem("authtoken")}`
-            },
-            body: JSON.stringify({
-                query: `
-        
-        query{
-            alljobs{
-              title
-              jobtype
-              description
-              workfromhome
-              pay
-              skillsrequired
-              mobile
-              minimumdesignation
-              location
-              
-              }
-            }
-        `
-            })
-        }).then(res => res.json())
-            .then(data => {
-                console.log(data)
-                
-                data.data.alljobs.forEach(alljobs => {
-
-                    console.log(alljobs.title)
-                    document.getElementById("alljobs").innerHTML+=
-                        `<div class='jobs'>
-      <div class='row'>
-          <i class='fas fa-user'></i>
-          <h6 class='pname'>Person Name</h6>
-          <h5 class='salary'>${alljobs.pay}</h5>
-      </div>
-      <div class='row jobrow'>
-          <h4 class='jobtitle'>${alljobs.title}</h4>
-          <h6 class='loc'>${alljobs.location}</h6>
-      </div>
-      <div class='row btnrow'>
-
-
-          <p class='desc'>${alljobs.description}</p>
-         
-      </div>
-       <div class='skillrow'>
-          <button disabled class='btn btn-light btn3'>${alljobs.skillsrequired}</button>
-          <button disabled class='btn btn-light btn3'>Work from home: ${alljobs.workfromhome}</button>
-          <button disabled class='btn btn-light btn3'>Job type: ${alljobs.jobtype}</button>
-          <button class='btn btn-danger btn2' type='button'>Contact</button>
-      </div>
-  </div>`
-                })
-                 
-            })
+ 

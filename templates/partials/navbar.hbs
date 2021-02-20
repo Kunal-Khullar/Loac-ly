@@ -27,7 +27,8 @@
           <a class="dropdown-item" href="apartment">Rent an apartment</a>
           <a class="dropdown-item" href="pg">Find PGs</a>
           
-          <a class="dropdown-item" onclick="toggleForm2()" href="#">List your apartment</a>
+          {{!-- <a class="dropdown-item" onclick="toggleForm2()" href="#">List your apartment</a> --}}
+          <a class="dropdown-item" onclick="toggleForm3()" href="#">List your PG</a>
         </div>
       </li>
       <li class="nav-item">
@@ -127,7 +128,7 @@
     <button type="button" onclick="addjob()" >Submit</button>
   </div>
 </div>
- <div class="overlay-form2 overlay2" id="form2">
+ {{!-- <div class="overlay-form2 overlay2" id="form2">
   <div class="close-btn" onclick="toggleForm2()">&times;</div>
   <h1>Enter all the details</h1>
   
@@ -166,37 +167,37 @@
   <div class="form-element">
     <button onclick="addhome()" type="button">Submit</button>
   </div>
-</div>
+</div> --}}
  <div class="overlay-form3 overlay3" id="form3">
   <div class="close-btn" onclick="toggleForm3()">&times;</div>
   <h1>Enter all the details</h1>
   
   <div class="form-element">
     <label for="fullname">Name</label>
-    <input id="pfname" type="text" id="fullname3">
+    <input id="pfname" type="text" >
   </div>
   <div class="form-element">
     <label for="email">Email</label>
-    <input id="pemail" type="email" id="email3">
+    <input id="pemail" type="email">
   </div>
   <div class="form-element">
     <label for="email">Contact</label>
-    <input id="pcontact" type="text" id="contact1">
+    <input id="pcontact" type="text">
   </div>
   <div class="form-element">
     <label for="email">Monthly rent</label>
-    <input id="prent" type="text" id="rent1">
+    <input id="prent" type="number" >
   </div>
   <div class="form-element">
     <label for="email">City</label>
-    <input id="pcity" type="text" id="city2">
+    <input id="pcity" type="text" >
   </div>
   
  <div class="skillsearch sort form-element">
                         <h6>PG type:</h6>
                         <select id="ptype" class="form-control">
-                       <option value="Boys" selected>Boys</option>
-                       <option value="Girls" >Girls</option>
+                       <option value="BOYS" selected>Boys</option>
+                       <option value="GIRLS" >Girls</option>
                                            </select>
                     </div>
   <div>
@@ -230,9 +231,11 @@
                                            </select>
                     </div>
   <div>
-    <input id="pupimages" type="file" name="photos" multiple>
+    <input id="pupimages" type="file" name="photos" >
   </div>
   <div class="form-element">
     <button onclick="addpg()" type="button">Submit</button>
   </div>
 </div>
+</div>
+
