@@ -186,10 +186,13 @@
     
 
     
-     fetch(proxyurl + 'https://loca-ly.herokuapp.com/api/', {
+     fetch('https://loca-ly.herokuapp.com/api/', {
+           mode:'no-cors',
             method: 'POST',
             headers: {
+                "X-Requested-With": "XMLHttpRequest",
                 "Content-Type": "application/json",
+                "Accept": "*/*",
                 "Authorization": `JWT ${localStorage.getItem("authtoken")}`
             },
             body: JSON.stringify({
