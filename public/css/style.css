@@ -124,11 +124,16 @@ ul li a{
     font-weight: bold;
     color: crimson;
 }
+#gg h6{
+    padding-top: 0.5rem 1rem;
+}
 footer{
     width: 100%;
-  
-    margin: auto;
-    margin-bottom: inherit;
+    
+   
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 footer p{
     margin: 0;
